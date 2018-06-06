@@ -1,0 +1,544 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11B7782320C7E494001E3C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7782220C7E494001E3C8C /* AppDelegate.swift */; };
+		11B7782520C7E494001E3C8C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7782420C7E494001E3C8C /* FirstViewController.swift */; };
+		11B7782720C7E494001E3C8C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7782620C7E494001E3C8C /* SecondViewController.swift */; };
+		11B7782A20C7E494001E3C8C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B7782820C7E494001E3C8C /* Main.storyboard */; };
+		11B7782C20C7E495001E3C8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B7782B20C7E495001E3C8C /* Assets.xcassets */; };
+		11B7782F20C7E495001E3C8C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B7782D20C7E495001E3C8C /* LaunchScreen.storyboard */; };
+		11B7783A20C7E495001E3C8C /* ANZTaxCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7783920C7E495001E3C8C /* ANZTaxCalcTests.swift */; };
+		11B7784D20C7E805001E3C8C /* Tax.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7784C20C7E805001E3C8C /* Tax.swift */; };
+		11B7784F20C7E932001E3C8C /* TaxBucketAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7784E20C7E932001E3C8C /* TaxBucketAU.swift */; };
+		11B7785120C7ECAB001E3C8C /* TaxBucketNZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7785020C7ECAB001E3C8C /* TaxBucketNZ.swift */; };
+		11B7785320C7ED17001E3C8C /* Jurisdiction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7785220C7ED17001E3C8C /* Jurisdiction.swift */; };
+		11B7785520C7F14E001E3C8C /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7785420C7F14E001E3C8C /* Contribution.swift */; };
+		11B7785720C7F614001E3C8C /* TaxBucketBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7785620C7F614001E3C8C /* TaxBucketBase.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11B7783620C7E495001E3C8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11B7781720C7E494001E3C8C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11B7781E20C7E494001E3C8C;
+			remoteInfo = ANZTaxCalc;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		11B7781F20C7E494001E3C8C /* ANZTaxCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANZTaxCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B7782220C7E494001E3C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11B7782420C7E494001E3C8C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		11B7782620C7E494001E3C8C /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		11B7782920C7E494001E3C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11B7782B20C7E495001E3C8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11B7782E20C7E495001E3C8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11B7783020C7E495001E3C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11B7783520C7E495001E3C8C /* ANZTaxCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ANZTaxCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11B7783920C7E495001E3C8C /* ANZTaxCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANZTaxCalcTests.swift; sourceTree = "<group>"; };
+		11B7783B20C7E495001E3C8C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11B7784C20C7E805001E3C8C /* Tax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tax.swift; sourceTree = "<group>"; };
+		11B7784E20C7E932001E3C8C /* TaxBucketAU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxBucketAU.swift; sourceTree = "<group>"; };
+		11B7785020C7ECAB001E3C8C /* TaxBucketNZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxBucketNZ.swift; sourceTree = "<group>"; };
+		11B7785220C7ED17001E3C8C /* Jurisdiction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jurisdiction.swift; sourceTree = "<group>"; };
+		11B7785420C7F14E001E3C8C /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
+		11B7785620C7F614001E3C8C /* TaxBucketBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxBucketBase.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11B7781C20C7E494001E3C8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B7783220C7E495001E3C8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11B7781620C7E494001E3C8C = {
+			isa = PBXGroup;
+			children = (
+				11B7782120C7E494001E3C8C /* ANZTaxCalc */,
+				11B7783820C7E495001E3C8C /* ANZTaxCalcTests */,
+				11B7782020C7E494001E3C8C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11B7782020C7E494001E3C8C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11B7781F20C7E494001E3C8C /* ANZTaxCalc.app */,
+				11B7783520C7E495001E3C8C /* ANZTaxCalcTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11B7782120C7E494001E3C8C /* ANZTaxCalc */ = {
+			isa = PBXGroup;
+			children = (
+				11B7782220C7E494001E3C8C /* AppDelegate.swift */,
+				11B7784520C7E5D4001E3C8C /* Models */,
+				11B7784620C7E5DE001E3C8C /* Views */,
+				11B7784420C7E5CB001E3C8C /* Controllers */,
+				11B7784720C7E636001E3C8C /* SupportingFiles */,
+				11B7784920C7E676001E3C8C /* CoreData */,
+				11B7784820C7E645001E3C8C /* Resources */,
+			);
+			path = ANZTaxCalc;
+			sourceTree = "<group>";
+		};
+		11B7783820C7E495001E3C8C /* ANZTaxCalcTests */ = {
+			isa = PBXGroup;
+			children = (
+				11B7783920C7E495001E3C8C /* ANZTaxCalcTests.swift */,
+				11B7783B20C7E495001E3C8C /* Info.plist */,
+			);
+			path = ANZTaxCalcTests;
+			sourceTree = "<group>";
+		};
+		11B7784420C7E5CB001E3C8C /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				11B7782420C7E494001E3C8C /* FirstViewController.swift */,
+				11B7782620C7E494001E3C8C /* SecondViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		11B7784520C7E5D4001E3C8C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				11B7784C20C7E805001E3C8C /* Tax.swift */,
+				11B7784E20C7E932001E3C8C /* TaxBucketAU.swift */,
+				11B7785020C7ECAB001E3C8C /* TaxBucketNZ.swift */,
+				11B7785620C7F614001E3C8C /* TaxBucketBase.swift */,
+				11B7785220C7ED17001E3C8C /* Jurisdiction.swift */,
+				11B7785420C7F14E001E3C8C /* Contribution.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		11B7784620C7E5DE001E3C8C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				11B7782820C7E494001E3C8C /* Main.storyboard */,
+				11B7782D20C7E495001E3C8C /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		11B7784720C7E636001E3C8C /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		11B7784820C7E645001E3C8C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				11B7782B20C7E495001E3C8C /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		11B7784920C7E676001E3C8C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				11B7783020C7E495001E3C8C /* Info.plist */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11B7781E20C7E494001E3C8C /* ANZTaxCalc */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B7783E20C7E495001E3C8C /* Build configuration list for PBXNativeTarget "ANZTaxCalc" */;
+			buildPhases = (
+				11B7781B20C7E494001E3C8C /* Sources */,
+				11B7781C20C7E494001E3C8C /* Frameworks */,
+				11B7781D20C7E494001E3C8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ANZTaxCalc;
+			productName = ANZTaxCalc;
+			productReference = 11B7781F20C7E494001E3C8C /* ANZTaxCalc.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11B7783420C7E495001E3C8C /* ANZTaxCalcTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11B7784120C7E495001E3C8C /* Build configuration list for PBXNativeTarget "ANZTaxCalcTests" */;
+			buildPhases = (
+				11B7783120C7E495001E3C8C /* Sources */,
+				11B7783220C7E495001E3C8C /* Frameworks */,
+				11B7783320C7E495001E3C8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11B7783720C7E495001E3C8C /* PBXTargetDependency */,
+			);
+			name = ANZTaxCalcTests;
+			productName = ANZTaxCalcTests;
+			productReference = 11B7783520C7E495001E3C8C /* ANZTaxCalcTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11B7781720C7E494001E3C8C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Vo Duy Khiem";
+				TargetAttributes = {
+					11B7781E20C7E494001E3C8C = {
+						CreatedOnToolsVersion = 9.3.1;
+					};
+					11B7783420C7E495001E3C8C = {
+						CreatedOnToolsVersion = 9.3.1;
+						TestTargetID = 11B7781E20C7E494001E3C8C;
+					};
+				};
+			};
+			buildConfigurationList = 11B7781A20C7E494001E3C8C /* Build configuration list for PBXProject "ANZTaxCalc" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11B7781620C7E494001E3C8C;
+			productRefGroup = 11B7782020C7E494001E3C8C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11B7781E20C7E494001E3C8C /* ANZTaxCalc */,
+				11B7783420C7E495001E3C8C /* ANZTaxCalcTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11B7781D20C7E494001E3C8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B7782F20C7E495001E3C8C /* LaunchScreen.storyboard in Resources */,
+				11B7782C20C7E495001E3C8C /* Assets.xcassets in Resources */,
+				11B7782A20C7E494001E3C8C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B7783320C7E495001E3C8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11B7781B20C7E494001E3C8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B7782720C7E494001E3C8C /* SecondViewController.swift in Sources */,
+				11B7785120C7ECAB001E3C8C /* TaxBucketNZ.swift in Sources */,
+				11B7784F20C7E932001E3C8C /* TaxBucketAU.swift in Sources */,
+				11B7784D20C7E805001E3C8C /* Tax.swift in Sources */,
+				11B7785320C7ED17001E3C8C /* Jurisdiction.swift in Sources */,
+				11B7785520C7F14E001E3C8C /* Contribution.swift in Sources */,
+				11B7782320C7E494001E3C8C /* AppDelegate.swift in Sources */,
+				11B7782520C7E494001E3C8C /* FirstViewController.swift in Sources */,
+				11B7785720C7F614001E3C8C /* TaxBucketBase.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11B7783120C7E495001E3C8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11B7783A20C7E495001E3C8C /* ANZTaxCalcTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11B7783720C7E495001E3C8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11B7781E20C7E494001E3C8C /* ANZTaxCalc */;
+			targetProxy = 11B7783620C7E495001E3C8C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11B7782820C7E494001E3C8C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11B7782920C7E494001E3C8C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11B7782D20C7E495001E3C8C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11B7782E20C7E495001E3C8C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11B7783C20C7E495001E3C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11B7783D20C7E495001E3C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11B7783F20C7E495001E3C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWNUB7TQ68;
+				INFOPLIST_FILE = "$(SRCROOT)/ANZTaxCalc/CoreData/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dkvo.ANZTaxCalc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11B7784020C7E495001E3C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWNUB7TQ68;
+				INFOPLIST_FILE = "$(SRCROOT)/ANZTaxCalc/CoreData/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dkvo.ANZTaxCalc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		11B7784220C7E495001E3C8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWNUB7TQ68;
+				INFOPLIST_FILE = ANZTaxCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dkvo.ANZTaxCalcTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ANZTaxCalc.app/ANZTaxCalc";
+			};
+			name = Debug;
+		};
+		11B7784320C7E495001E3C8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AWNUB7TQ68;
+				INFOPLIST_FILE = ANZTaxCalcTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dkvo.ANZTaxCalcTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ANZTaxCalc.app/ANZTaxCalc";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11B7781A20C7E494001E3C8C /* Build configuration list for PBXProject "ANZTaxCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B7783C20C7E495001E3C8C /* Debug */,
+				11B7783D20C7E495001E3C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11B7783E20C7E495001E3C8C /* Build configuration list for PBXNativeTarget "ANZTaxCalc" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B7783F20C7E495001E3C8C /* Debug */,
+				11B7784020C7E495001E3C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11B7784120C7E495001E3C8C /* Build configuration list for PBXNativeTarget "ANZTaxCalcTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11B7784220C7E495001E3C8C /* Debug */,
+				11B7784320C7E495001E3C8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 11B7781720C7E494001E3C8C /* Project object */;
+}
