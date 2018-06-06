@@ -13,8 +13,11 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        let taxBucketAU = TaxBucketAU()
+        print("AU: \(taxBucketAU.TaxRate(bySalary: 190000))")
+        
         let taxBucketNZ = TaxBucketNZ()
-        print(taxBucketNZ.TaxRate(bySalary: 92000))
+        print("NZ: \(taxBucketNZ.TaxRate(bySalary: 190000))")
     }
 
     override func didReceiveMemoryWarning() {

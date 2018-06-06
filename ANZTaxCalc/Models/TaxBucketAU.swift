@@ -12,9 +12,9 @@ class TaxBucketAU : TaxBucketBase {
     override init() {
         super.init()
         self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 0, maxLimit: 18200, rate: 0))
-        self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 18201, maxLimit: 37000, rate: 0.19))
-        self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 37001, maxLimit: 87000, rate: 0.325))
-        self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 87001, maxLimit: 180000, rate: 0.37))
-        self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 180001, maxLimit: Int.max, rate: 0.45))
+        self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 18200, maxLimit: 37000, rate: 0.19))
+        self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 37000, maxLimit: 87000, rate: 0.325))
+        self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 87000, maxLimit: 180000, rate: 0.37))
+        self.TaxBucket.append(Tax(jurisdiction: .AU, minLimit: 180000, maxLimit: Int.max, rate: 0.45))
     }
 }
