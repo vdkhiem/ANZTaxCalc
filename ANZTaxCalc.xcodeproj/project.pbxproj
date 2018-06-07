@@ -20,6 +20,8 @@
 		11B7785320C7ED17001E3C8C /* Jurisdiction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7785220C7ED17001E3C8C /* Jurisdiction.swift */; };
 		11B7785520C7F14E001E3C8C /* Contribution.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7785420C7F14E001E3C8C /* Contribution.swift */; };
 		11B7785720C7F614001E3C8C /* TaxBucketBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7785620C7F614001E3C8C /* TaxBucketBase.swift */; };
+		11D579BE20C9228F00330CF9 /* ContributionNZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D579BD20C9228F00330CF9 /* ContributionNZ.swift */; };
+		11D579C020C924FD00330CF9 /* ContributionAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11D579BF20C924FD00330CF9 /* ContributionAU.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,8 @@
 		11B7785220C7ED17001E3C8C /* Jurisdiction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jurisdiction.swift; sourceTree = "<group>"; };
 		11B7785420C7F14E001E3C8C /* Contribution.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contribution.swift; sourceTree = "<group>"; };
 		11B7785620C7F614001E3C8C /* TaxBucketBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxBucketBase.swift; sourceTree = "<group>"; };
+		11D579BD20C9228F00330CF9 /* ContributionNZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionNZ.swift; sourceTree = "<group>"; };
+		11D579BF20C924FD00330CF9 /* ContributionAU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContributionAU.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,8 @@
 				11B7785620C7F614001E3C8C /* TaxBucketBase.swift */,
 				11B7785220C7ED17001E3C8C /* Jurisdiction.swift */,
 				11B7785420C7F14E001E3C8C /* Contribution.swift */,
+				11D579BD20C9228F00330CF9 /* ContributionNZ.swift */,
+				11D579BF20C924FD00330CF9 /* ContributionAU.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -269,11 +275,13 @@
 				11B7782720C7E494001E3C8C /* SecondViewController.swift in Sources */,
 				11B7785120C7ECAB001E3C8C /* TaxBucketNZ.swift in Sources */,
 				11B7784F20C7E932001E3C8C /* TaxBucketAU.swift in Sources */,
+				11D579BE20C9228F00330CF9 /* ContributionNZ.swift in Sources */,
 				11B7784D20C7E805001E3C8C /* Tax.swift in Sources */,
 				11B7785320C7ED17001E3C8C /* Jurisdiction.swift in Sources */,
 				11B7785520C7F14E001E3C8C /* Contribution.swift in Sources */,
 				11B7782320C7E494001E3C8C /* AppDelegate.swift in Sources */,
 				11B7782520C7E494001E3C8C /* FirstViewController.swift in Sources */,
+				11D579C020C924FD00330CF9 /* ContributionAU.swift in Sources */,
 				11B7785720C7F614001E3C8C /* TaxBucketBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

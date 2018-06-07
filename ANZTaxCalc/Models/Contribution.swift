@@ -10,11 +10,11 @@ import Foundation
 
 class Contribution {
     var Jurisdiction: Jurisdiction
-    var Name: String
+    var Id: String
     var Rate: Double
-    init(jurisdiction: Jurisdiction, name: String, rate: Double) {
+    init(jurisdiction: Jurisdiction, id: String, rate: Double) {
         self.Jurisdiction = jurisdiction
-        self.Name = name
+        self.Id = id
         self.Rate = rate
     }
 }
