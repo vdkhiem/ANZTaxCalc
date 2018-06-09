@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		116C843220CBCE960067E78D /* Income.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C843120CBCE960067E78D /* Income.swift */; };
+		116C843420CBD03F0067E78D /* IncomeAU.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C843320CBD03F0067E78D /* IncomeAU.swift */; };
+		116C843620CBDCCF0067E78D /* IncomeNZ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C843520CBDCCF0067E78D /* IncomeNZ.swift */; };
+		116C843820CBE15A0067E78D /* PayFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116C843720CBE15A0067E78D /* PayFrequency.swift */; };
 		11B7782320C7E494001E3C8C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7782220C7E494001E3C8C /* AppDelegate.swift */; };
 		11B7782520C7E494001E3C8C /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7782420C7E494001E3C8C /* FirstViewController.swift */; };
 		11B7782720C7E494001E3C8C /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B7782620C7E494001E3C8C /* SecondViewController.swift */; };
@@ -35,6 +39,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		116C843120CBCE960067E78D /* Income.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Income.swift; sourceTree = "<group>"; };
+		116C843320CBD03F0067E78D /* IncomeAU.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeAU.swift; sourceTree = "<group>"; };
+		116C843520CBDCCF0067E78D /* IncomeNZ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IncomeNZ.swift; sourceTree = "<group>"; };
+		116C843720CBE15A0067E78D /* PayFrequency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayFrequency.swift; sourceTree = "<group>"; };
 		11B7781F20C7E494001E3C8C /* ANZTaxCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ANZTaxCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B7782220C7E494001E3C8C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11B7782420C7E494001E3C8C /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +143,10 @@
 				11B7785420C7F14E001E3C8C /* Contribution.swift */,
 				11D579BD20C9228F00330CF9 /* ContributionNZ.swift */,
 				11D579BF20C924FD00330CF9 /* ContributionAU.swift */,
+				116C843120CBCE960067E78D /* Income.swift */,
+				116C843320CBD03F0067E78D /* IncomeAU.swift */,
+				116C843520CBDCCF0067E78D /* IncomeNZ.swift */,
+				116C843720CBE15A0067E78D /* PayFrequency.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -276,12 +288,16 @@
 				11B7785120C7ECAB001E3C8C /* TaxBucketNZ.swift in Sources */,
 				11B7784F20C7E932001E3C8C /* TaxBucketAU.swift in Sources */,
 				11D579BE20C9228F00330CF9 /* ContributionNZ.swift in Sources */,
+				116C843420CBD03F0067E78D /* IncomeAU.swift in Sources */,
 				11B7784D20C7E805001E3C8C /* Tax.swift in Sources */,
 				11B7785320C7ED17001E3C8C /* Jurisdiction.swift in Sources */,
 				11B7785520C7F14E001E3C8C /* Contribution.swift in Sources */,
+				116C843620CBDCCF0067E78D /* IncomeNZ.swift in Sources */,
 				11B7782320C7E494001E3C8C /* AppDelegate.swift in Sources */,
 				11B7782520C7E494001E3C8C /* FirstViewController.swift in Sources */,
+				116C843820CBE15A0067E78D /* PayFrequency.swift in Sources */,
 				11D579C020C924FD00330CF9 /* ContributionAU.swift in Sources */,
+				116C843220CBCE960067E78D /* Income.swift in Sources */,
 				11B7785720C7F614001E3C8C /* TaxBucketBase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
