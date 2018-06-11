@@ -13,4 +13,5 @@ enum PayFrequency : Int {
     case Monthly = 2
     case Weekly = 3
     case Daily = 4
+    case Hourly = 5
 }

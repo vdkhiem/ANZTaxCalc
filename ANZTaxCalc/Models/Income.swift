@@ -9,7 +9,39 @@
 import Foundation
 
 class Income {
-    var salary: Double {
+    var salary: Double
+    var payFrequency: PayFrequency
+    var workHourPerWeek: Int = 40
+    let hoursPerDay: Int = 8
+
+    var taxBucket: TaxBucketBase
+    var takeHomeCash: Double = 0.0
+
+    var annualSalary: Double {
+        get {
+            switch payFrequency {
+            case .Annually:
+                return self.salary
+            case .Monthly:
+                return self.salary * 12
+            case .Weekly:
+                return self.salary * 52
+            case .Daily:
+                let date = Date()
+                let calendar = Calendar.current
+                let year = calendar.component(.year, from: date)
+                return (year % 4 == 0) ? self.salary * 366 : self.salary * 365
+            case .Hourly:
+                return 0.0
+            }
+            
+        }
+        set {
+            self.computedSalary = newValue
+        }
+    }
+    
+    var computedSalary: Double {
         get {
             switch payFrequency {
             case .Annually:
@@ -23,20 +55,21 @@ class Income {
                 let calendar = Calendar.current
                 let year = calendar.component(.year, from: date)
                 return (year % 4 == 0) ? self.salary/366 : self.salary/365
+            case .Hourly:
+                return 0.0
             }
         }
         set {
-            self.salary = newValue
+            self.computedSalary = newValue
         }
     }
-    var payFrequency: PayFrequency
+    
     var incomeTax: Double {
         return taxBucket.TaxRate(bySalary: salary)
     }
-    var taxBucket: TaxBucketBase
-    var takeHomeCash: Double = 0.0
     
-    init (taxBucket: TaxBucketBase, payFrequency: PayFrequency ) {
+    init (taxBucket: TaxBucketBase, salary: Double, payFrequency: PayFrequency ) {
+        self.salary = salary
         self.payFrequency = payFrequency
         self.taxBucket = taxBucket
     }
