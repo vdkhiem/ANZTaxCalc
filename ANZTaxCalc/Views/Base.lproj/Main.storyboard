@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -148,6 +148,7 @@
                     <connections>
                         <outlet property="accOutputText" destination="tnN-Go-955" id="8pi-W2-2y1"/>
                         <outlet property="frequencyInput" destination="YCV-DR-Taw" id="2dr-oO-Xte"/>
+                        <outlet property="frequencyOutput" destination="t0H-pf-fPS" id="9hr-g7-b9v"/>
                         <outlet property="kiwiSaverInputText" destination="Bct-wK-B1h" id="dRU-zx-JvZ"/>
                         <outlet property="kiwiSaverOutputText" destination="njl-jn-gh9" id="Gak-gl-vbm"/>
                         <outlet property="netOutputText" destination="khL-LN-dNb" id="DAE-Ql-WPD"/>

@@ -10,57 +10,57 @@ import Foundation
 
 class Income {
     var salary: Double
-    var payFrequency: PayFrequency
+    let inputPayFrequency: PayFrequency
+    let outputPayFrequency: PayFrequency
     var workHourPerWeek: Int = 40
     let hoursPerDay: Int = 8
 
     var taxBucket: TaxBucketBase
     var takeHomeCash: Double = 0.0
+    
+    let date = Date()
+    
+    // E.g. Input Annual: 92000
+    // E.g. Output Annual: 92000, Month: 92000/12=7666.67, Weekly: 92000/365/7)=1764.38, Daily: 92000/250=352.88  Hour: 92000/52*40 = 44.23
 
-    var annualSalary: Double {
+    var inputAnnualSalary: Double {
         get {
-            switch payFrequency {
+            switch inputPayFrequency {
             case .Annually:
                 return self.salary
             case .Monthly:
                 return self.salary * 12
             case .Weekly:
-                return self.salary * 52
+                return self.salary * Double(date.daysPerYear()) / 7
             case .Daily:
-                let date = Date()
-                let calendar = Calendar.current
-                let year = calendar.component(.year, from: date)
-                return (year % 4 == 0) ? self.salary * 366 : self.salary * 365
+                return self.salary * Double(date.daysCount(until: date.lastDayOfYear()).workingDays)
             case .Hourly:
-                return 0.0
+                return self.salary * Double(date.daysPerYear()) / 7 * Double(hoursPerDay)
             }
             
         }
         set {
-            self.computedSalary = newValue
+            self.inputAnnualSalary = newValue
         }
     }
     
-    var computedSalary: Double {
+    var outputAnnualSalary: Double {
         get {
-            switch payFrequency {
+            switch outputPayFrequency {
             case .Annually:
-                return self.salary
+                return self.inputAnnualSalary
             case .Monthly:
-                return self.salary/12
+                return self.inputAnnualSalary / 12
             case .Weekly:
-                return self.salary/52
+                return self.inputAnnualSalary / (Double(date.daysPerYear()) / 7)
             case .Daily:
-                let date = Date()
-                let calendar = Calendar.current
-                let year = calendar.component(.year, from: date)
-                return (year % 4 == 0) ? self.salary/366 : self.salary/365
+                return self.inputAnnualSalary / Double(date.daysCount(until: date.lastDayOfYear()).workingDays)
             case .Hourly:
-                return 0.0
+                return self.inputAnnualSalary / Double(date.daysPerYear()) * 7 / Double(hoursPerDay)
             }
         }
         set {
-            self.computedSalary = newValue
+            self.outputAnnualSalary = newValue
         }
     }
     
@@ -68,9 +68,10 @@ class Income {
         return taxBucket.TaxRate(bySalary: salary)
     }
     
-    init (taxBucket: TaxBucketBase, salary: Double, payFrequency: PayFrequency ) {
+    init (taxBucket: TaxBucketBase, salary: Double, inputPayFrequency: PayFrequency, outputPayFrequency: PayFrequency ) {
         self.salary = salary
-        self.payFrequency = payFrequency
+        self.inputPayFrequency = inputPayFrequency
+        self.outputPayFrequency = outputPayFrequency
         self.taxBucket = taxBucket
     }
 }
