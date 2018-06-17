@@ -9,9 +9,9 @@
 import Foundation
 
 enum PayFrequency : Int {
-    case Annually = 1
-    case Monthly = 2
-    case Weekly = 3
-    case Daily = 4
-    case Hourly = 5
+    case Annual = 1
+    case Month = 2
+    case Fornight = 3
+    case Week = 4
+    case Hour = 5
 }

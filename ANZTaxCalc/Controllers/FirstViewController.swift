@@ -42,35 +42,24 @@ class FirstViewController: UIViewController {
 
     @IBAction func calculateTouchUp(_ sender: Any) {
         let salary: Double = Double(salaryInputText.text!)!
-        //let kiwiSaver: Double = Double(kiwiSaverInputText.text!)!
+        let kiwiSaver: Double = Double(kiwiSaverInputText.text!)!
         
-        /*
-        let taxBucketNZ = TaxBucketNZ()
-        let tax: Double = taxBucketNZ.TaxRate(bySalary: salary)
-        
-        salaryOutputText.text = salaryInputText.text
-        taxOutputText.text = "\(tax)"
-        kiwiSaverOutputText.text = "\(salary * kiwiSaver/100)"
-        netOutputText.text = "\(salary - tax - kiwiSaver/100)"
+        let incomeNZ = IncomeNZ(taxBucket: TaxBucketNZ(), salary: Double(salary), inputPayFrequency: frequencyList[frequencyInput.selectedSegmentIndex]!, outputPayFrequency: frequencyList[frequencyOutput.selectedSegmentIndex]!, inputKiwiSaver: kiwiSaver)
 
-        
-        let taxBucketAU = TaxBucketAU()
-        print("AU: \(taxBucketAU.TaxRate(bySalary: 190000))")
-        */
-        
-        let incomeNZ = IncomeNZ(taxBucket: TaxBucketNZ(), salary: Double(salary), inputPayFrequency: frequencyList[frequencyInput.selectedSegmentIndex]!, outputPayFrequency: frequencyList[frequencyOutput.selectedSegmentIndex]!)
-
-        salaryOutputText.text = String(incomeNZ.outputAnnualSalary)
-        
+        salaryOutputText.text = String(incomeNZ.outputSalary)
+        taxOutputText.text = String(incomeNZ.incomeTax)
+        kiwiSaverOutputText.text = String(incomeNZ.outputKiwiSaver)
+        accOutputText.text = String(incomeNZ.outputAcc)
+        netOutputText.text = String(incomeNZ.takeHomeCash)
     }
     
     // Mark: helper methods
     func initiateFrequencyList() {
-        frequencyList[0] = PayFrequency.Annually
-        frequencyList[1] = PayFrequency.Monthly
-        frequencyList[2] = PayFrequency.Weekly
-        frequencyList[3] = PayFrequency.Daily
-        frequencyList[4] = PayFrequency.Hourly
+        frequencyList[0] = PayFrequency.Annual
+        frequencyList[1] = PayFrequency.Month
+        frequencyList[2] = PayFrequency.Fornight
+        frequencyList[3] = PayFrequency.Week
+        frequencyList[4] = PayFrequency.Hour
     }
 }
 

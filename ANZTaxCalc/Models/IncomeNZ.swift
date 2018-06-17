@@ -9,13 +9,30 @@
 import Foundation
 
 class IncomeNZ : Income {
-    var kiwiSaver: Double?
-    var acc: Double?
+    let inputKiwiSaver: Double
+    var inputAcc: Double = 0.0139
+    
+    init (taxBucket: TaxBucketBase, salary: Double, inputPayFrequency: PayFrequency, outputPayFrequency: PayFrequency, inputKiwiSaver: Double ) {
+        self.inputKiwiSaver = inputKiwiSaver
+        super.init(taxBucket: taxBucket, salary: salary, inputPayFrequency: inputPayFrequency, outputPayFrequency: outputPayFrequency)
+    }
+    
+    var outputKiwiSaver: Double {
+        get {
+            return Double((outputSalary * inputKiwiSaver / 100)).rounded2Places()
+        }
+    }
+    
+    var outputAcc: Double {
+        get {
+            return Double((outputSalary * inputAcc)).rounded2Places()
+        }
+    }
     
     override var takeHomeCash: Double {
         get {
-            let contribution = super.salary * (kiwiSaver!/100) - super.salary * (acc!/100)
-            return super.salary - super.incomeTax - contribution
+            let contribution = outputKiwiSaver + outputAcc
+            return Double(outputSalary - incomeTax - contribution).rounded2Places()
         }
         set {
             self.takeHomeCash = newValue

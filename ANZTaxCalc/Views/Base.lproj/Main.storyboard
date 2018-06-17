@@ -25,7 +25,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kiwi Saver (%)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bct-wK-B1h">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="3" borderStyle="roundedRect" placeholder="Kiwi Saver (%)" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bct-wK-B1h">
                                 <rect key="frame" x="16" y="145" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -44,22 +44,22 @@
                                 <rect key="frame" x="16" y="71" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Annually"/>
-                                    <segment title="Monthly"/>
-                                    <segment title="Weekly"/>
-                                    <segment title="Daily"/>
-                                    <segment title="Hourly"/>
+                                    <segment title="Annual"/>
+                                    <segment title="Month"/>
+                                    <segment title="Fornight"/>
+                                    <segment title="Week"/>
+                                    <segment title="Hour"/>
                                 </segments>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t0H-pf-fPS">
                                 <rect key="frame" x="16" y="221" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title="Annually"/>
-                                    <segment title="Monthly"/>
-                                    <segment title="Weekly"/>
-                                    <segment title="Daily"/>
-                                    <segment title="Hourly"/>
+                                    <segment title="Annual"/>
+                                    <segment title="Month"/>
+                                    <segment title="Fornight"/>
+                                    <segment title="Week"/>
+                                    <segment title="Hour"/>
                                 </segments>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wal-Jc-dNl">

@@ -13,6 +13,7 @@ class ANZTaxCalcTests: XCTestCase {
     var frequencyList = [Int: PayFrequency]()
     let salary = 92000.00
     let taxBucketNZ = TaxBucketNZ()
+    let date = Date()
     
     override func setUp() {
         super.setUp()
@@ -38,23 +39,25 @@ class ANZTaxCalcTests: XCTestCase {
     }
     
     func testInputAnnualSalaryNZ() {
-        var incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: Double(salary), inputPayFrequency: .Annually, outputPayFrequency: .Annually)
+        var incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: Double(salary), inputPayFrequency: .Annual, outputPayFrequency: .Annual)
         
         XCTAssertEqual(salary, incomeNZ.inputAnnualSalary)
         
-        incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: Double(salary/12), inputPayFrequency: .Monthly, outputPayFrequency: .Annually)
+        incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: Double(salary/12), inputPayFrequency: .Month, outputPayFrequency: .Annual)
         
         XCTAssertEqual(salary, incomeNZ.inputAnnualSalary)
         
-        incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: salary/Double(Date().daysPerYear())*7, inputPayFrequency: .Weekly, outputPayFrequency: .Annually)
+        incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: salary/26, inputPayFrequency: .Fornight, outputPayFrequency: .Fornight)
         
         XCTAssertEqual(salary, incomeNZ.inputAnnualSalary)
         
-        incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: Double(salary), inputPayFrequency: .Daily, outputPayFrequency: .Annually)
+        incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: Double(salary/52), inputPayFrequency: .Week, outputPayFrequency: .Week)
         
         XCTAssertEqual(salary, incomeNZ.inputAnnualSalary)
         
-        incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: Double(salary), inputPayFrequency: .Hourly, outputPayFrequency: .Annually)
+        incomeNZ = IncomeNZ(taxBucket: taxBucketNZ, salary: Double(salary/52/40), inputPayFrequency: .Hour, outputPayFrequency: .Hour)
+        
+        XCTAssertEqual(salary, incomeNZ.inputAnnualSalary)
     }
     
 }
