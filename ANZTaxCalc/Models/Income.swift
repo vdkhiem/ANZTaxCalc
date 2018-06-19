@@ -23,11 +23,8 @@ class Income {
     
     // E.g. Input Annual: 92000
     // E.g. Output Annual: 92000, Month: 92000/12=7666.67, Fornight: 92000/26=, Week: 92000/52=  Hour: 92000/52*40 = 44.23
-
     var inputAnnualSalary: Double {
         get {
-            print("First and Last days: \(date.firstDayOfYear) \(date.lastDayOfYear)")
-            print("Days per year: \(date.daysCount())")
             switch inputPayFrequency {
             case .Annual:
                 return self.salary
@@ -90,4 +87,5 @@ class Income {
         self.outputPayFrequency = outputPayFrequency
         self.taxBucket = taxBucket
     }
+
 }

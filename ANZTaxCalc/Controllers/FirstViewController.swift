@@ -25,13 +25,16 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var netOutputText: UITextField!
     
     // Member variables
+    let ato = "ATO"
+    let ird = "IRD"
     var frequencyList = [Int: PayFrequency]()
+    var jurisdictionList = [String: Jurisdiction]()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initiateFrequencyList()
-        
+        initJurisdictionList()
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -41,16 +44,7 @@ class FirstViewController: UIViewController {
     }
 
     @IBAction func calculateTouchUp(_ sender: Any) {
-        let salary: Double = Double(salaryInputText.text!)!
-        let kiwiSaver: Double = Double(kiwiSaverInputText.text!)!
-        
-        let incomeNZ = IncomeNZ(taxBucket: TaxBucketNZ(), salary: Double(salary), inputPayFrequency: frequencyList[frequencyInput.selectedSegmentIndex]!, outputPayFrequency: frequencyList[frequencyOutput.selectedSegmentIndex]!, inputKiwiSaver: kiwiSaver)
-
-        salaryOutputText.text = String(incomeNZ.outputSalary)
-        taxOutputText.text = String(incomeNZ.incomeTax)
-        kiwiSaverOutputText.text = String(incomeNZ.outputKiwiSaver)
-        accOutputText.text = String(incomeNZ.outputAcc)
-        netOutputText.text = String(incomeNZ.takeHomeCash)
+        calculateIncomeTax()
     }
     
     // Mark: helper methods
@@ -60,6 +54,33 @@ class FirstViewController: UIViewController {
         frequencyList[2] = PayFrequency.Fornight
         frequencyList[3] = PayFrequency.Week
         frequencyList[4] = PayFrequency.Hour
+    }
+    
+    func initJurisdictionList() {
+        jurisdictionList[ato] = Jurisdiction.AU
+        jurisdictionList[ird] = Jurisdiction.NZ
+    }
+    
+    func calculateIncomeTax() {
+        let salary: Double = Double(salaryInputText.text!)!
+        let kiwiSaver: Double = Double(kiwiSaverInputText.text!)!
+        
+        let factory = IncomeFactory(salary: Double(salary), retirementSaving: kiwiSaver, inputPayFrequency: frequencyList[frequencyInput.selectedSegmentIndex]!, outputPayFrequency: frequencyList[frequencyOutput.selectedSegmentIndex]!)
+        
+        let income = factory.produceIncome(byJurisdiction: jurisdictionList[taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex)!]!)
+        
+        salaryOutputText.text = String(income.outputSalary)
+        taxOutputText.text = String(income.incomeTax)
+        
+        if taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex) == ato {
+            kiwiSaverOutputText.text = String((income as! IncomeAU).outputSuperAnnuation)
+            accOutputText.text = String((income as! IncomeAU).outputMediCare)
+            netOutputText.text = String((income as! IncomeAU).takeHomeCash)
+        } else {
+            kiwiSaverOutputText.text = String((income as! IncomeNZ).outputKiwiSaver)
+            accOutputText.text = String((income as! IncomeNZ).outputAcc)
+            netOutputText.text = String((income as! IncomeNZ).takeHomeCash)
+        }
     }
 }
 

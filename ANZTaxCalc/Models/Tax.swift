@@ -9,7 +9,7 @@
 import Foundation
 
 class Tax {
-    var Jurisdiction: Jurisdiction = .AU
+    var Jurisdiction: Jurisdiction
     var MinLimit: Int
     var MaxLimit: Int
     var Rate: Double

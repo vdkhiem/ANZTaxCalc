@@ -9,13 +9,30 @@
 import Foundation
 
 class IncomeAU : Income {
-    var superAnnuation: Double?
-    var mediCare: Double?
+    var inputSuperAnnuation: Double
+    var inputMediCare = 0.02
+    
+    init (taxBucket: TaxBucketBase, salary: Double, inputPayFrequency: PayFrequency, outputPayFrequency: PayFrequency, inputSuperAnnuation: Double ) {
+        self.inputSuperAnnuation = inputSuperAnnuation
+        super.init(taxBucket: taxBucket, salary: salary, inputPayFrequency: inputPayFrequency, outputPayFrequency: outputPayFrequency)
+    }
 
+    var outputSuperAnnuation: Double {
+        get {
+            return Double((outputSalary * inputSuperAnnuation / 100)).rounded2Places()
+        }
+    }
+    
+    var outputMediCare: Double {
+        get {
+            return Double((outputSalary * inputMediCare)).rounded2Places()
+        }
+    }
+    
     override var takeHomeCash: Double {
         get {
-            let contribution = super.salary * (superAnnuation!/100) - super.salary * (mediCare!/100)
-            return super.salary - super.incomeTax - contribution
+            let contribution = outputSuperAnnuation + outputMediCare
+            return Double(outputSalary - incomeTax - contribution).rounded2Places()
         }
         set {
             super.takeHomeCash = newValue
