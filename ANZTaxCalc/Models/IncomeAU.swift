@@ -10,7 +10,10 @@ import Foundation
 
 class IncomeAU : Income {
     var inputSuperAnnuation: Double
+    var enableSuperAnnuation: Bool = true
+    
     var inputMediCare = 0.02
+    var enableMediCare: Bool = true
     
     init (taxBucket: TaxBucketBase, salary: Double, inputPayFrequency: PayFrequency, outputPayFrequency: PayFrequency, inputSuperAnnuation: Double ) {
         self.inputSuperAnnuation = inputSuperAnnuation
@@ -19,13 +22,13 @@ class IncomeAU : Income {
 
     var outputSuperAnnuation: Double {
         get {
-            return Double((outputSalary * inputSuperAnnuation / 100)).rounded2Places()
+            return enableSuperAnnuation ? Double((outputSalary * inputSuperAnnuation / 100)).rounded2Places() : 0.0
         }
     }
     
     var outputMediCare: Double {
         get {
-            return Double((outputSalary * inputMediCare)).rounded2Places()
+            return enableMediCare ? Double((outputSalary * inputMediCare)).rounded2Places() : 0.0
         }
     }
     

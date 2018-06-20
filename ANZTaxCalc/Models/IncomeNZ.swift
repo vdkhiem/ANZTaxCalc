@@ -10,7 +10,10 @@ import Foundation
 
 class IncomeNZ : Income {
     let inputKiwiSaver: Double
+    var enableKiwiSaver: Bool = true
+    
     var inputAcc: Double = 0.0139
+    var enableAcc: Bool = true
     
     init (taxBucket: TaxBucketBase, salary: Double, inputPayFrequency: PayFrequency, outputPayFrequency: PayFrequency, inputKiwiSaver: Double ) {
         self.inputKiwiSaver = inputKiwiSaver
@@ -19,13 +22,13 @@ class IncomeNZ : Income {
     
     var outputKiwiSaver: Double {
         get {
-            return Double((outputSalary * inputKiwiSaver / 100)).rounded2Places()
+            return enableKiwiSaver ? Double((outputSalary * inputKiwiSaver / 100)).rounded2Places() : 0
         }
     }
     
     var outputAcc: Double {
         get {
-            return Double((outputSalary * inputAcc)).rounded2Places()
+            return enableAcc ? Double((outputSalary * inputAcc)).rounded2Places() : 0
         }
     }
     
