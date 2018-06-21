@@ -1,8 +1,8 @@
 //
-//  Utilities.swift
+//  UIUtilities.swift
 //  ANZTaxCalc
 //
-//  Created by Vo Duy Khiem on 17/06/18.
+//  Created by Vo Duy Khiem on 21/06/18.
 //  Copyright © 2018 Vo Duy Khiem. All rights reserved.
 //
 
@@ -10,24 +10,28 @@ import Foundation
 import CoreData
 import UIKit
 
-public class Utilities {
+public class UIUtilities {
     var settingDataCoreManager = CoreDataManager(appDelegate: UIApplication.shared.delegate as! AppDelegate, entityName: "Setting")
-    static func currencyFormat() -> NumberFormatter {
-        let currencyFormatter = NumberFormatter()
-        currencyFormatter.usesGroupingSeparator = true
-        currencyFormatter.numberStyle = .currency
-        // localize to your grouping and decimal separator
-        currencyFormatter.locale = Locale.current
-        
-        return currencyFormatter
-    }
     
     /*
      // MARK: - Core Data Management
      */
-    func loadSetting(uiSwitch: UISwitch, forKey: String) {
+    func getSetting(forKey: String) -> Bool {
         if let cardTypeSetting = getSetting() {
-            uiSwitch.isOn = cardTypeSetting.value(forKey: forKey) as! Bool
+            return cardTypeSetting.value(forKey: forKey) as! Bool
+        }
+        return true
+    }
+    
+    func loadSetting(uiSwitch: UISwitch, forKey: String) {
+        if let setting = getSetting() {
+            if let settingValue = setting.value(forKey: forKey) {
+                uiSwitch.isOn = settingValue as! Bool
+            } else {
+                saveSetting(uiSwitch: uiSwitch, forKey: forKey)
+            }
+        } else {
+            saveSetting(uiSwitch: uiSwitch, forKey: forKey)
         }
     }
     
@@ -49,5 +53,3 @@ public class Utilities {
         }
     }
 }
-
-

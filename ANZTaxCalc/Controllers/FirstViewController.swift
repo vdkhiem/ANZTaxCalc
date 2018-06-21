@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class FirstViewController: UIViewController, UITabBarControllerDelegate {
 
     // MARK: Inputs
     @IBOutlet weak var taxJurisdictionSegment: UISegmentedControl!
@@ -20,22 +20,34 @@ class FirstViewController: UIViewController {
     @IBOutlet weak var frequencyOutput: UISegmentedControl!
     @IBOutlet weak var salaryOutputText: UITextField!
     @IBOutlet weak var taxOutputText: UITextField!
-    @IBOutlet weak var kiwiSaverOutputText: UITextField!
-    @IBOutlet weak var accOutputText: UITextField!
+    @IBOutlet weak var retirementSavingOutputText: UITextField!
+    @IBOutlet weak var medicalInsuranceOutputText: UITextField!
     @IBOutlet weak var netOutputText: UITextField!
+    @IBOutlet weak var retirementLabel: UILabel!
+    @IBOutlet weak var medicalInsuranceLabel: UILabel!
     
     // Member variables
     let ato = "ATO"
     let ird = "IRD"
     var frequencyList = [Int: PayFrequency]()
     var jurisdictionList = [String: Jurisdiction]()
+    let uiUtilities = UIUtilities()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tabBarController?.delegate = self
+        loadAppearance()
         initiateFrequencyList()
         initJurisdictionList()
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        let tabBarIndex = tabBarController.selectedIndex
+        if tabBarIndex == 0 {
+            loadAppearance()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,6 +57,10 @@ class FirstViewController: UIViewController {
 
     @IBAction func calculateTouchUp(_ sender: Any) {
         calculateIncomeTax()
+    }
+    
+    @IBAction func taxJurisdictionSegmentValueChanged(_ sender: UISegmentedControl) {
+        loadAppearance()
     }
     
     // Mark: helper methods
@@ -63,6 +79,7 @@ class FirstViewController: UIViewController {
     
     func calculateIncomeTax() {
         let salary: Double = Double(salaryInputText.text!)!
+        
         let kiwiSaver: Double = Double(kiwiSaverInputText.text!)!
         
         let factory = IncomeFactory(salary: Double(salary), retirementSaving: kiwiSaver, inputPayFrequency: frequencyList[frequencyInput.selectedSegmentIndex]!, outputPayFrequency: frequencyList[frequencyOutput.selectedSegmentIndex]!)
@@ -73,13 +90,34 @@ class FirstViewController: UIViewController {
         taxOutputText.text = String(income.incomeTax)
         
         if taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex) == ato {
-            kiwiSaverOutputText.text = String((income as! IncomeAU).outputSuperAnnuation)
-            accOutputText.text = String((income as! IncomeAU).outputMediCare)
+            retirementSavingOutputText.text = String((income as! IncomeAU).outputSuperAnnuation)
+            medicalInsuranceOutputText.text = String((income as! IncomeAU).outputMediCare)
             netOutputText.text = String((income as! IncomeAU).takeHomeCash)
         } else {
-            kiwiSaverOutputText.text = String((income as! IncomeNZ).outputKiwiSaver)
-            accOutputText.text = String((income as! IncomeNZ).outputAcc)
+            retirementSavingOutputText.text = String((income as! IncomeNZ).outputKiwiSaver)
+            medicalInsuranceOutputText.text = String((income as! IncomeNZ).outputAcc)
             netOutputText.text = String((income as! IncomeNZ).takeHomeCash)
+        }
+    }
+    
+    func loadAppearance() {
+        switch taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex) {
+        case ato:
+            retirementSavingOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: "superAnnuation")
+            medicalInsuranceOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: "medicare")
+            retirementLabel.text = "Super Annuation"
+            medicalInsuranceLabel.text = "Medicare"
+        case ird:
+            retirementSavingOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: "kiwiSaver")
+            medicalInsuranceOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: "acc")
+            retirementLabel.text = "KiwiSaver"
+            medicalInsuranceLabel.text = "Acc"
+        case .none:
+            retirementSavingOutputText.isUserInteractionEnabled = true
+            medicalInsuranceOutputText.isUserInteractionEnabled = true
+        case .some(_):
+            retirementSavingOutputText.isUserInteractionEnabled = true
+            medicalInsuranceOutputText.isUserInteractionEnabled = true
         }
     }
 }

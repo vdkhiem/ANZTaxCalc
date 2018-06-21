@@ -39,6 +39,9 @@
                                     <segment title="ATO"/>
                                     <segment title="IRD"/>
                                 </segments>
+                                <connections>
+                                    <action selector="taxJurisdictionSegmentValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="bLl-e5-LuV"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="YCV-DR-Taw">
                                 <rect key="frame" x="16" y="71" width="343" height="29"/>
@@ -120,14 +123,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kiwi Saver" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTO-e8-oaq">
-                                <rect key="frame" x="16" y="339" width="79" height="21"/>
+                                <rect key="frame" x="16" y="339" width="153" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weM-5W-YeO">
-                                <rect key="frame" x="16" y="377" width="35" height="21"/>
+                                <rect key="frame" x="16" y="377" width="133" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -146,12 +149,14 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Tax" image="first" id="acW-dT-cKf"/>
                     <connections>
-                        <outlet property="accOutputText" destination="tnN-Go-955" id="8pi-W2-2y1"/>
                         <outlet property="frequencyInput" destination="YCV-DR-Taw" id="2dr-oO-Xte"/>
                         <outlet property="frequencyOutput" destination="t0H-pf-fPS" id="9hr-g7-b9v"/>
                         <outlet property="kiwiSaverInputText" destination="Bct-wK-B1h" id="dRU-zx-JvZ"/>
-                        <outlet property="kiwiSaverOutputText" destination="njl-jn-gh9" id="Gak-gl-vbm"/>
+                        <outlet property="medicalInsuranceLabel" destination="weM-5W-YeO" id="kAc-BI-EyC"/>
+                        <outlet property="medicalInsuranceOutputText" destination="tnN-Go-955" id="8pi-W2-2y1"/>
                         <outlet property="netOutputText" destination="khL-LN-dNb" id="DAE-Ql-WPD"/>
+                        <outlet property="retirementLabel" destination="TTO-e8-oaq" id="nJt-eJ-gfw"/>
+                        <outlet property="retirementSavingOutputText" destination="njl-jn-gh9" id="Gak-gl-vbm"/>
                         <outlet property="salaryInputText" destination="TW8-ua-F56" id="nHN-DX-hCu"/>
                         <outlet property="salaryOutputText" destination="2Tu-D4-DBJ" id="Ina-fL-1gw"/>
                         <outlet property="taxJurisdictionSegment" destination="C21-Ia-pl3" id="F1J-K4-OQL"/>
@@ -205,10 +210,10 @@
             </objects>
             <point key="canvasLocation" x="749.60000000000002" y="359.37031484257875"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Setting Table View Controller-->
         <scene sceneID="AUQ-os-KUI">
             <objects>
-                <tableViewController id="Oum-d4-a8b" sceneMemberID="viewController">
+                <tableViewController id="Oum-d4-a8b" customClass="SettingTableViewController" customModule="ANZTaxCalc" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="LrM-Cx-mce">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="555"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,6 +238,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2vf-7r-5nu">
                                                     <rect key="frame" x="279" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="kiwiSaverSwitchChanged:" destination="Oum-d4-a8b" eventType="valueChanged" id="pAA-UA-7vp"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -254,6 +262,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZh-nf-eFh">
                                                     <rect key="frame" x="279" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="accValueChanged:" destination="Oum-d4-a8b" eventType="valueChanged" id="Ujp-TL-WVZ"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -279,6 +290,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dbn-0M-pS4">
                                                     <rect key="frame" x="279" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="superAnnuationValueChanged:" destination="Oum-d4-a8b" eventType="valueChanged" id="XvT-tg-Tad"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -290,7 +304,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ACC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-8d-mWm">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Medicare" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4e-8d-mWm">
                                                     <rect key="frame" x="15" y="12" width="98" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -300,6 +314,9 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwV-Wy-g4A">
                                                     <rect key="frame" x="279" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <connections>
+                                                        <action selector="mediCarValueChanged:" destination="Oum-d4-a8b" eventType="valueChanged" id="9Yq-V8-4L7"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -312,10 +329,16 @@
                             <outlet property="delegate" destination="Oum-d4-a8b" id="Ayx-yk-m0P"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="accSwitch" destination="jZh-nf-eFh" id="Tjo-Gm-qdn"/>
+                        <outlet property="kiwiSaverSwitch" destination="2vf-7r-5nu" id="k3B-H7-2px"/>
+                        <outlet property="mediCareSwitch" destination="fwV-Wy-g4A" id="BBW-l7-Ufd"/>
+                        <outlet property="superAnnuationSwitch" destination="dbn-0M-pS4" id="cbr-g9-BQP"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="78M-2i-ImF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1433" y="359"/>
+            <point key="canvasLocation" x="1522" y="348"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
