@@ -53,6 +53,9 @@
                                     <segment title="Week"/>
                                     <segment title="Hour"/>
                                 </segments>
+                                <connections>
+                                    <action selector="inputFrequencyValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="X0a-D9-BGE"/>
+                                </connections>
                             </segmentedControl>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t0H-pf-fPS">
                                 <rect key="frame" x="16" y="221" width="343" height="29"/>
@@ -64,6 +67,9 @@
                                     <segment title="Week"/>
                                     <segment title="Hour"/>
                                 </segments>
+                                <connections>
+                                    <action selector="outputFrequencyValueChanged:" destination="9pv-A4-QxB" eventType="valueChanged" id="CG2-3b-qL5"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wal-Jc-dNl">
                                 <rect key="frame" x="155" y="183" width="64" height="30"/>
@@ -151,7 +157,7 @@
                     <connections>
                         <outlet property="frequencyInput" destination="YCV-DR-Taw" id="2dr-oO-Xte"/>
                         <outlet property="frequencyOutput" destination="t0H-pf-fPS" id="9hr-g7-b9v"/>
-                        <outlet property="kiwiSaverInputText" destination="Bct-wK-B1h" id="dRU-zx-JvZ"/>
+                        <outlet property="retirementSavingInputText" destination="Bct-wK-B1h" id="dRU-zx-JvZ"/>
                         <outlet property="medicalInsuranceLabel" destination="weM-5W-YeO" id="kAc-BI-EyC"/>
                         <outlet property="medicalInsuranceOutputText" destination="tnN-Go-955" id="8pi-W2-2y1"/>
                         <outlet property="netOutputText" destination="khL-LN-dNb" id="DAE-Ql-WPD"/>
@@ -239,7 +245,7 @@
                                                     <rect key="frame" x="279" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <connections>
-                                                        <action selector="kiwiSaverSwitchChanged:" destination="Oum-d4-a8b" eventType="valueChanged" id="pAA-UA-7vp"/>
+                                                        <action selector="retirementSavingSwitchChanged:" destination="Oum-d4-a8b" eventType="valueChanged" id="pAA-UA-7vp"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>

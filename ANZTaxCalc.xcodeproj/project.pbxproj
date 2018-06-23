@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		088F9B6E20DBA67C00C8F55A /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F9B6D20DBA67C00C8F55A /* UIUtilities.swift */; };
+		08983AD820DE1ACC003188DD /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08983AD720DE1ACC003188DD /* GlobalConstants.swift */; };
 		08D07AE920DA648D00D003C5 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D07AE820DA648D00D003C5 /* SettingTableViewController.swift */; };
 		08D07AEC20DA659000D003C5 /* ANZTaxCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08D07AEA20DA659000D003C5 /* ANZTaxCalc.xcdatamodeld */; };
 		08D07AEE20DA664100D003C5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D07AED20DA664100D003C5 /* CoreDataManager.swift */; };
@@ -45,6 +46,7 @@
 
 /* Begin PBXFileReference section */
 		088F9B6D20DBA67C00C8F55A /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
+		08983AD720DE1ACC003188DD /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		08D07AE820DA648D00D003C5 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		08D07AEB20DA659000D003C5 /* ANZTaxCalc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ANZTaxCalc.xcdatamodel; sourceTree = "<group>"; };
 		08D07AED20DA664100D003C5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -177,6 +179,7 @@
 				08D6F67D20D683B800C7ED13 /* DoubleExtension.swift */,
 				08D07AED20DA664100D003C5 /* CoreDataManager.swift */,
 				088F9B6D20DBA67C00C8F55A /* UIUtilities.swift */,
+				08983AD720DE1ACC003188DD /* GlobalConstants.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -303,6 +306,7 @@
 				08D6F68020D907F000C7ED13 /* IncomeFactory.swift in Sources */,
 				11B7785120C7ECAB001E3C8C /* TaxBucketNZ.swift in Sources */,
 				08D07AEE20DA664100D003C5 /* CoreDataManager.swift in Sources */,
+				08983AD820DE1ACC003188DD /* GlobalConstants.swift in Sources */,
 				11B7784F20C7E932001E3C8C /* TaxBucketAU.swift in Sources */,
 				116C843420CBD03F0067E78D /* IncomeAU.swift in Sources */,
 				11B7784D20C7E805001E3C8C /* Tax.swift in Sources */,
