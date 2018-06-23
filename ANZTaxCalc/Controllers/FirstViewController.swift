@@ -36,6 +36,7 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
         super.viewDidLoad()
         self.tabBarController?.delegate = self
         loadAppearance()
+        setDefaultRetirementContribution()
         initiateFrequencyList()
         initJurisdictionList()
         // Do any additional setup after loading the view, typically from a nib.
@@ -59,6 +60,7 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     @IBAction func taxJurisdictionSegmentValueChanged(_ sender: UISegmentedControl) {
+        setDefaultRetirementContribution()
         refreshApperanceAndTaxCalculation()
     }
     
@@ -82,6 +84,14 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
     func initJurisdictionList() {
         jurisdictionList[GlobalConstants.ato] = Jurisdiction.AU
         jurisdictionList[GlobalConstants.ird] = Jurisdiction.NZ
+    }
+    
+    func setDefaultRetirementContribution() {
+        if taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex) == GlobalConstants.ato {
+            retirementSavingInputText.text = "9.5"
+        } else {
+            retirementSavingInputText.text = "3"
+        }
     }
     
     func refreshApperanceAndTaxCalculation() {
@@ -122,12 +132,16 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
             retirementSavingInputText.placeholder = "Super Annuation (%)"
             retirementLabel.text = "Super Annuation"
             medicalInsuranceLabel.text = "Medicare"
+            retirementSavingOutputText.placeholder = "Super Annuation"
+            medicalInsuranceOutputText.placeholder = "Medicare"
         } else {
             retirementSavingOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: GlobalConstants.kiwiSaver)
             medicalInsuranceOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: GlobalConstants.acc)
             retirementSavingInputText.placeholder = "Kiwi Saver (%)"
             retirementLabel.text = "KiwiSaver"
             medicalInsuranceLabel.text = "Acc"
+            retirementSavingOutputText.placeholder = "KiwiSaver"
+            medicalInsuranceOutputText.placeholder = "Acc"
         }
     }
 }
