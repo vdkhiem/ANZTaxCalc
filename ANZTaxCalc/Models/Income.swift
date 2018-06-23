@@ -78,7 +78,7 @@ class Income {
         case .Hour:
             taxResult = taxReturn / 52 / Double(workHourPerWeek)
         }
-        return Double(taxResult).rounded2Places()
+        return Double(taxResult).roundedToDecimalPlace()
     }
     
     init (taxBucket: TaxBucketBase, salary: Double, inputPayFrequency: PayFrequency, outputPayFrequency: PayFrequency ) {

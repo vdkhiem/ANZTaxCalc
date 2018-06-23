@@ -111,17 +111,17 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
         
         let income = factory.produceIncome(byJurisdiction: jurisdictionList[taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex)!]!)
         
-        salaryOutputText.text = String(income.outputSalary)
-        taxOutputText.text = String(income.incomeTax)
+        salaryOutputText.text = Utilities.formatNumber(value: income.outputSalary)
+        taxOutputText.text = Utilities.formatNumber(value: income.incomeTax)
         
         if taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex) == GlobalConstants.ato {
-            retirementSavingOutputText.text = String((income as! IncomeAU).outputSuperAnnuation)
-            medicalInsuranceOutputText.text = String((income as! IncomeAU).outputMediCare)
-            netOutputText.text = String((income as! IncomeAU).takeHomeCash)
+            retirementSavingOutputText.text =  Utilities.formatNumber(value:(income as! IncomeAU).outputSuperAnnuation)
+            medicalInsuranceOutputText.text =  Utilities.formatNumber(value:(income as! IncomeAU).outputMediCare)
+            netOutputText.text =  Utilities.formatNumber(value:(income as! IncomeAU).takeHomeCash)
         } else {
-            retirementSavingOutputText.text = String((income as! IncomeNZ).outputKiwiSaver)
-            medicalInsuranceOutputText.text = String((income as! IncomeNZ).outputAcc)
-            netOutputText.text = String((income as! IncomeNZ).takeHomeCash)
+            retirementSavingOutputText.text =  Utilities.formatNumber(value:(income as! IncomeNZ).outputKiwiSaver)
+            medicalInsuranceOutputText.text =  Utilities.formatNumber(value:(income as! IncomeNZ).outputAcc)
+            netOutputText.text =  Utilities.formatNumber(value:(income as! IncomeNZ).takeHomeCash)
         }
     }
     

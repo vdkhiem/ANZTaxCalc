@@ -9,6 +9,7 @@
 import Foundation
 
 struct GlobalConstants {
+    static let decimalPlace: String = "%.2f"
     
     // Contributions
     static let acc: String = "acc"

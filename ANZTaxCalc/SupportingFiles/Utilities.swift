@@ -11,7 +11,12 @@ import CoreData
 import UIKit
 
 public class Utilities {
-    var settingDataCoreManager = CoreDataManager(appDelegate: UIApplication.shared.delegate as! AppDelegate, entityName: "Setting")
+    
+    
+    static func formatNumber(value: Double) -> String {
+        return String(format: GlobalConstants.decimalPlace, value)
+    }
+    
     static func currencyFormat() -> NumberFormatter {
         let currencyFormatter = NumberFormatter()
         currencyFormatter.usesGroupingSeparator = true
@@ -25,6 +30,8 @@ public class Utilities {
     /*
      // MARK: - Core Data Management
      */
+    var settingDataCoreManager = CoreDataManager(appDelegate: UIApplication.shared.delegate as! AppDelegate, entityName: "Setting")
+    
     func loadSetting(uiSwitch: UISwitch, forKey: String) {
         if let cardTypeSetting = getSetting() {
             uiSwitch.isOn = cardTypeSetting.value(forKey: forKey) as! Bool

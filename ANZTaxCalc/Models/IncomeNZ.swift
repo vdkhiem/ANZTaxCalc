@@ -22,20 +22,20 @@ class IncomeNZ : Income {
     
     var outputKiwiSaver: Double {
         get {
-            return enableKiwiSaver ? Double((outputSalary * inputKiwiSaver / 100)).rounded2Places() : 0
+            return enableKiwiSaver ? Double((outputSalary * inputKiwiSaver / 100)).roundedToDecimalPlace() : 0
         }
     }
     
     var outputAcc: Double {
         get {
-            return enableAcc ? Double((outputSalary * inputAcc)).rounded2Places() : 0
+            return enableAcc ? Double((outputSalary * inputAcc)).roundedToDecimalPlace() : 0
         }
     }
     
     override var takeHomeCash: Double {
         get {
             let contribution = outputKiwiSaver + outputAcc
-            return Double(outputSalary - incomeTax - contribution).rounded2Places()
+            return Double(outputSalary - incomeTax - contribution)
         }
         set {
             self.takeHomeCash = newValue

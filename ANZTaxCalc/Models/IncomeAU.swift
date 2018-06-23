@@ -22,20 +22,20 @@ class IncomeAU : Income {
 
     var outputSuperAnnuation: Double {
         get {
-            return enableSuperAnnuation ? Double((outputSalary * inputSuperAnnuation / 100)).rounded2Places() : 0.0
+            return enableSuperAnnuation ? Double((outputSalary * inputSuperAnnuation / 100)).roundedToDecimalPlace() : 0.0
         }
     }
     
     var outputMediCare: Double {
         get {
-            return enableMediCare ? Double((outputSalary * inputMediCare)).rounded2Places() : 0.0
+            return enableMediCare ? Double((outputSalary * inputMediCare)).roundedToDecimalPlace() : 0.0
         }
     }
     
     override var takeHomeCash: Double {
         get {
             let contribution = outputSuperAnnuation + outputMediCare
-            return Double(outputSalary - incomeTax - contribution).rounded2Places()
+            return Double(outputSalary - incomeTax - contribution)
         }
         set {
             super.takeHomeCash = newValue
