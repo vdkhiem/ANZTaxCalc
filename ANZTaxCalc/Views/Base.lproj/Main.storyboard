@@ -11,7 +11,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tax-->
+        <!--First View Controller-->
         <scene sceneID="hNz-n2-bh7">
             <objects>
                 <viewController id="9pv-A4-QxB" customClass="FirstViewController" customModule="ANZTaxCalc" customModuleProvider="target" sceneMemberID="viewController">
@@ -187,7 +187,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="PQr-Ze-W5v"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Tax" image="first" id="acW-dT-cKf"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="acW-dT-cKf"/>
                     <connections>
                         <outlet property="frequencyInput" destination="YCV-DR-Taw" id="2dr-oO-Xte"/>
                         <outlet property="frequencyOutput" destination="t0H-pf-fPS" id="9hr-g7-b9v"/>
@@ -240,7 +240,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="O1u-W8-tvY"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="second" id="cPa-gy-q4n"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="searchDisplayController" destination="AU0-ZZ-Z1O" id="12f-CX-dfu"/>
                     </connections>
@@ -442,8 +442,4 @@
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="first" width="30" height="30"/>
-        <image name="second" width="30" height="30"/>
-    </resources>
 </document>
