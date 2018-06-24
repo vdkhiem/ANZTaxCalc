@@ -35,6 +35,7 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBarController?.delegate = self
+        self.hideKeyboardWhenTappedAround() 
         loadAppearance()
         setDefaultRetirementContribution()
         initiateFrequencyList()
@@ -126,17 +127,19 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
     }
     
     func loadAppearance() {
+        salaryOutputText.isUserInteractionEnabled = false
+        taxOutputText.isUserInteractionEnabled = false
+        retirementSavingOutputText.isUserInteractionEnabled = false
+        medicalInsuranceOutputText.isUserInteractionEnabled = false
+        netOutputText.isUserInteractionEnabled = false
+        
         if taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex) == GlobalConstants.ato {
-            retirementSavingOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: GlobalConstants.superAnnuation)
-            medicalInsuranceOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: GlobalConstants.medicare)
             retirementSavingInputText.placeholder = "Super Annuation (%)"
             retirementLabel.text = "Super Annuation"
             medicalInsuranceLabel.text = "Medicare"
             retirementSavingOutputText.placeholder = "Super Annuation"
             medicalInsuranceOutputText.placeholder = "Medicare"
         } else {
-            retirementSavingOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: GlobalConstants.kiwiSaver)
-            medicalInsuranceOutputText.isUserInteractionEnabled = uiUtilities.getSetting(forKey: GlobalConstants.acc)
             retirementSavingInputText.placeholder = "Kiwi Saver (%)"
             retirementLabel.text = "KiwiSaver"
             medicalInsuranceLabel.text = "Acc"

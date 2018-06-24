@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		088F9B6E20DBA67C00C8F55A /* UIUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088F9B6D20DBA67C00C8F55A /* UIUtilities.swift */; };
 		08983AD820DE1ACC003188DD /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08983AD720DE1ACC003188DD /* GlobalConstants.swift */; };
+		08983ADA20DF9E35003188DD /* UIExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08983AD920DF9E35003188DD /* UIExtension.swift */; };
 		08D07AE920DA648D00D003C5 /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D07AE820DA648D00D003C5 /* SettingTableViewController.swift */; };
 		08D07AEC20DA659000D003C5 /* ANZTaxCalc.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08D07AEA20DA659000D003C5 /* ANZTaxCalc.xcdatamodeld */; };
 		08D07AEE20DA664100D003C5 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08D07AED20DA664100D003C5 /* CoreDataManager.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		088F9B6D20DBA67C00C8F55A /* UIUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIUtilities.swift; sourceTree = "<group>"; };
 		08983AD720DE1ACC003188DD /* GlobalConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
+		08983AD920DF9E35003188DD /* UIExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIExtension.swift; sourceTree = "<group>"; };
 		08D07AE820DA648D00D003C5 /* SettingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		08D07AEB20DA659000D003C5 /* ANZTaxCalc.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ANZTaxCalc.xcdatamodel; sourceTree = "<group>"; };
 		08D07AED20DA664100D003C5 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				08D07AED20DA664100D003C5 /* CoreDataManager.swift */,
 				088F9B6D20DBA67C00C8F55A /* UIUtilities.swift */,
 				08983AD720DE1ACC003188DD /* GlobalConstants.swift */,
+				08983AD920DF9E35003188DD /* UIExtension.swift */,
 			);
 			path = SupportingFiles;
 			sourceTree = "<group>";
@@ -311,6 +314,7 @@
 				116C843420CBD03F0067E78D /* IncomeAU.swift in Sources */,
 				11B7784D20C7E805001E3C8C /* Tax.swift in Sources */,
 				08D07AEC20DA659000D003C5 /* ANZTaxCalc.xcdatamodeld in Sources */,
+				08983ADA20DF9E35003188DD /* UIExtension.swift in Sources */,
 				08D6F67C20D67EE500C7ED13 /* Utilities.swift in Sources */,
 				11B7785320C7ED17001E3C8C /* Jurisdiction.swift in Sources */,
 				116C843620CBDCCF0067E78D /* IncomeNZ.swift in Sources */,
