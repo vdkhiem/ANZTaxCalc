@@ -15,6 +15,7 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
     @IBOutlet weak var frequencyInput: UISegmentedControl!
     @IBOutlet weak var salaryInputText: UITextField!
     @IBOutlet weak var retirementSavingInputText: UITextField!
+    @IBOutlet weak var retirementSavingInputLabel: UILabel!
     
     // MARK: Output
     @IBOutlet weak var frequencyOutput: UISegmentedControl!
@@ -134,13 +135,15 @@ class FirstViewController: UIViewController, UITabBarControllerDelegate {
         netOutputText.isUserInteractionEnabled = false
         
         if taxJurisdictionSegment.titleForSegment(at: taxJurisdictionSegment.selectedSegmentIndex) == GlobalConstants.ato {
+            retirementSavingInputLabel.text = "Super Annuation (%)"
             retirementSavingInputText.placeholder = "Super Annuation (%)"
             retirementLabel.text = "Super Annuation"
             medicalInsuranceLabel.text = "Medicare"
             retirementSavingOutputText.placeholder = "Super Annuation"
             medicalInsuranceOutputText.placeholder = "Medicare"
         } else {
-            retirementSavingInputText.placeholder = "Kiwi Saver (%)"
+            retirementSavingInputLabel.text = "KiwiSaver (%)"
+            retirementSavingInputText.placeholder = "KiwiSaver (%)"
             retirementLabel.text = "KiwiSaver"
             medicalInsuranceLabel.text = "Acc"
             retirementSavingOutputText.placeholder = "KiwiSaver"
